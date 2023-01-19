@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 18, 2023 at 03:01 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.1
+-- Generation Time: Jan 19, 2023 at 02:16 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -51,6 +51,19 @@ CREATE TABLE `tb_kamar` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_pemesanan`
+--
+
+CREATE TABLE `tb_pemesanan` (
+  `id_pemesanan` int(11) NOT NULL,
+  `id_kamar` int(11) NOT NULL,
+  `tgl_cekin` varchar(35) NOT NULL,
+  `tgl_cekout` varchar(35) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tb_user`
 --
 
@@ -79,6 +92,12 @@ INSERT INTO `tb_user` (`uid`, `uname`, `password`, `level`, `created_at`) VALUES
 --
 ALTER TABLE `tb_kamar`
   ADD PRIMARY KEY (`id_kamar`);
+
+--
+-- Indexes for table `tb_pemesanan`
+--
+ALTER TABLE `tb_pemesanan`
+  ADD PRIMARY KEY (`id_pemesanan`);
 
 --
 -- Indexes for table `tb_user`
